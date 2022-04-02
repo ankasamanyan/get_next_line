@@ -6,7 +6,7 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 20:40:57 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/03/28 21:07:23 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/04/02 16:42:45 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,35 @@
 size_t	gnl_strlen(char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	if (!str)
-		return(0);
+		return (0);
 	while (str[i] != '\0' )
 		i++;
-	return(i);
+	return (i);
 }
 
 char	*gnl_calloc(int count)
 {
 	char	*stringy;
 	int		i;
-	
+
 	i = 0;
 	stringy = malloc (count * sizeof(char));
 	if (!stringy)
-		return(NULL);
+		return (NULL);
 	while (i < count)
 		stringy[i++] = '\0';
-	return(stringy);
+	return (stringy);
 }
 
 char	*gnl_strdup(char *str)
 {
 	int		strlen;
 	char	*stringy;
-	int 	i;
-	
+	int		i;
+
 	i = 0;
 	strlen = gnl_strlen(str);
 	stringy = gnl_calloc(strlen + 1);
@@ -53,7 +53,7 @@ char	*gnl_strdup(char *str)
 		i++;
 	}
 	stringy[i] = '\0';
-	return(stringy);
+	return (stringy);
 }
 
 char	*gnl_strchr(char *str, char c)
@@ -67,14 +67,14 @@ char	*gnl_strchr(char *str, char c)
 			return (str + i);
 		i++;
 	}
-	if (str[i] ==  c)
+	if (str[i] == c)
 		return (str + i);
 	return (NULL);
 }
 
 char	*gnl_memmove(char *dest, char *src, size_t len)
 {
-	size_t			i;
+	size_t	i;
 
 	i = 0;
 	if (!dest && !src)
